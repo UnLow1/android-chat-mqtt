@@ -52,8 +52,6 @@ public class SimpleChatActivity extends AppCompatActivity {
         //LIST OF ARRAY STRINGS WHICH WILL SERVE AS LIST ITEMS
         final ArrayList<ChatMessage> listItems = new ArrayList<>();
         //DEFINING STRING ADAPTER WHICH WILL HANDLE DATA OF LISTVIEW
-//        final ArrayAdapter<String> adapter;
-        //w metodzie onCreate obslugujemy dodwanie wiadomosci do listy
         final ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_2, android.R.id.text1, listItems) {
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
@@ -90,12 +88,6 @@ public class SimpleChatActivity extends AppCompatActivity {
                 } catch (MqttException e) {
                     e.printStackTrace();
                 }
-//                Message msg = myHandler.obtainMessage();
-//                Bundle b = new Bundle();
-//                b.putString("NICK", "JA");
-//                b.putString("MSG", messageEditText.getText().toString());
-//                msg.setData(b);
-//                myHandler.sendMessage(msg);
             }
         });
     }
@@ -147,7 +139,6 @@ public class SimpleChatActivity extends AppCompatActivity {
             System.out.println("Connected");
             sampleClient.subscribe("#");
         } catch (MqttException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
